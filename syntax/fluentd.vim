@@ -16,12 +16,14 @@ syn case ignore
 syntax include @Html syntax/html.vim
 
 syn match fluentdPlutinTag +<+ contains=@Html
+syn match fluentdComment +#.*+
 
 syn keyword pluginDirective source match store server
 syn keyword includeDirective include
 
 syn keyword Command type path time_format port
 
+syn keyword inputPluginCommand pos_file
 syn keyword inputPluginCommandHttp bind body_size_limit keepalive_timeout
 syn keyword inputPluginCommandTail tag format rotate_wait
 syn keyword inputPluginCommandExec command keys tag_key run_interval
@@ -37,6 +39,7 @@ syn keyword bufferPluginCommand buffer_type buffer_path
 hi link pluginDirective Define
 hi link includeDirective Define
 hi link Command Identifier
+hi link inputPluginCommand Identifier
 hi link inputPluginCommandHttp Identifier
 hi link inputPluginCommandTail Identifier
 hi link inputPluginCommandExec Identifier
@@ -45,6 +48,8 @@ hi link outputBufferedPluginCommandForward Identifier
 hi link outputBufferedPluginCommandExec Identifier
 hi link outputNonBufferedPluginCommand Identifier
 hi link bufferPluginCommand Identifier
+
+hi link fluentdComment Comment
 
 let b:current_syntax="fluentd"
 
