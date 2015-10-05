@@ -21,7 +21,7 @@ syn match fluentdComment +#.*+
 syn keyword pluginDirective source match store server
 syn keyword includeDirective include
 
-syn keyword Command type path time_format port
+syn keyword Command id type path time_format port
 
 syn keyword inputPluginCommand pos_file
 syn keyword inputPluginCommandHttp bind body_size_limit keepalive_timeout
